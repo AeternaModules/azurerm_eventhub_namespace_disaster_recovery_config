@@ -1,3 +1,7 @@
+output "eventhub_namespace_disaster_recovery_configs_id" {
+  description = "Map of id values across all eventhub_namespace_disaster_recovery_configs, keyed the same as var.eventhub_namespace_disaster_recovery_configs"
+  value       = { for k, v in azurerm_eventhub_namespace_disaster_recovery_config.eventhub_namespace_disaster_recovery_configs : k => v.id }
+}
 output "eventhub_namespace_disaster_recovery_configs_name" {
   description = "Map of name values across all eventhub_namespace_disaster_recovery_configs, keyed the same as var.eventhub_namespace_disaster_recovery_configs"
   value       = { for k, v in azurerm_eventhub_namespace_disaster_recovery_config.eventhub_namespace_disaster_recovery_configs : k => v.name }
